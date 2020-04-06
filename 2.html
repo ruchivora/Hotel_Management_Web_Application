@@ -1,0 +1,126 @@
+<html>
+<head>
+<title></title>
+
+<link rel="stylesheet" href="style1.css">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script>
+(function($,W,D)
+{
+    var JQUERY4U = {};
+
+    JQUERY4U.UTIL =
+    {
+        setupFormValidation: function()
+        {
+            //form validation rules
+            $("#register-form").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required",
+                    
+    
+                    email: {
+                        required: true,
+                        email: true
+                    },
+
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    agree: "required"
+                },
+
+                messages: {
+                    firstname: "Please enter your firstname",
+                    lastname: "Please enter your lastname",
+
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    },
+                    email: "Please enter a valid email address",
+                    agree: "Please accept our policy"
+                },
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+        }
+    }
+
+    //when the dom has loaded setup form validation rules
+    $(D).ready(function($) {
+        JQUERY4U.UTIL.setupFormValidation();
+    });
+
+})(jQuery, window, document);
+
+</script>
+</head>
+
+<body>
+
+
+<!-- HTML form for validation demo -->
+<form  class="form-all"  action="" method="post" id="register-form" novalidate="novalidate">
+
+	  <div class="heading1"><!--hotel heading  -->
+         <div id="heading11">&nbsp;&nbsp;&nbsp;&nbsp;The Charriot Hotel</div>
+      </div>
+
+    <div  id="form-content" >
+       
+
+            <div class="fieldgroup" >
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname"/>
+            </div><br>
+
+            <div class="fieldgroup" >
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname"/>
+            </div><br>
+            
+            <div class="fieldgroup">
+                <label for="firstname">Nationality</label>
+                <select name="nationality" >
+                <option>Indian</option>
+                <option> African</option>
+                <option>Pakistani</option>
+                <option>Omani</option>
+                <option>European</option>
+
+              </select> 
+
+            </div><br>
+
+
+        
+
+
+            <div class="fieldgroup">
+                <label for="email">Email</label>
+                <input type="text" name="email"/>
+            </div><br>
+
+            <div class="fieldgroup">
+                <label for="password">Password</label>
+                <input type="password" name="password"/>
+            </div><br>
+
+            <div class="fieldgroup">
+                
+                <input  class="button" type="submit" value="signup" class="submit" />
+            </div>
+
+        
+    </div>
+
+        
+</form>
+</body>
