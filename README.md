@@ -3,10 +3,10 @@
 **Designed SQL database model that determined logical structure to support the web application**
 
 ## What I Learned
--**To Design the SQL databse**
--**HTML**
--**CSS**
--**PHP**
--**SQL**
+- **To Design the SQL databse**
+- **HTML**
+- **CSS**
+- **PHP**
+- **SQL**
 
 
